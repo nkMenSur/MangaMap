@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <ng-container *ngIf="mangas">
+      <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 mb-4" *ngFor="let manga of top12">
+        <mdb-card class="">
+          <div class="view rgba-white-slight waves-light" mdbWavesEffect>
+            <mdb-card-img class="rounded"
+              [routerLink]="['/details', manga[Emanga.ID]]"
+              routerLinkActive="router-link-active"
+              [src]="manga[Emanga.Image] ? ImageCdnUrl + manga[Emanga.Image]: 'https://cdn.mangaeden.com/images/no_image.svg'"
+              alt="{{manga[Emanga.Title] + ' cover image' }}">
+            </mdb-card-img>
+          </div>
+        </mdb-card>
+      </div>
+    </ng-container>
+  </div>
+</div>

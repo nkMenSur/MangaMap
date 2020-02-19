@@ -1,0 +1,8 @@
+<p *ngIf="loading">Loading...</p>
+<ng-container *ngIf="!loading">
+  <button (click)="previous()" *ngIf="previousId">previous</button>
+  <button (click)="next()" *ngIf="nextId">next</button>
+  <ng-container *ngFor="let image of chapterData?.chapter">
+    <img appLazyLoad [src]="cdnImgRoot + image[1]" />
+  </ng-container>
+</ng-container>

@@ -1,0 +1,30 @@
+<header class="h-100">
+  <mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark black" [containerInside]="true">
+    <mdb-navbar-brand>
+      <a class="logo navbar-brand" [routerLink]="['/home']" routerLinkActive="router-link-active" ><strong>{{ title }}</strong></a>
+    </mdb-navbar-brand>
+    <links>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active waves-light" mdbWavesEffect>
+          <a class="nav-link" [routerLink]="['/top30']" >Top 30 <span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+    </links>
+  </mdb-navbar>
+</header>
+
+<main class="text-center py-5 mt-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="page-footer font-small black fixed-bottom">
+  <div class="footer-copyright text-center py-3">
+    © {{ currentYear }} HomoDigitalis
+  </div>
+</footer>
