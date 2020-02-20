@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { IMangaList } from 'src/app/SharedModule/interfaces/IMangaList';
-import { IManga } from 'src/app/SharedModule/interfaces/IManga';
-import { Manga } from 'src/app/SharedModule/enums/Manga';
-import { IMAGE } from 'src/app/SharedModule/endpoints/endpoints';
 import { MangaService } from 'src/app/services/manga/manga.service';
+import { Manga } from 'src/app/enums/Manga';
+import { IMAGE } from 'src/app/endpoints/endpoints';
+import { IMangaList } from 'src/app/interfaces/IMangaList';
+import { IManga } from 'src/app/interfaces/IManga';
 @Component({
   selector: 'app-topX',
   templateUrl: './topX.component.html',

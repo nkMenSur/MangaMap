@@ -28,3 +28,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ##TODO:
 # [Adsense](https://github.com/scttcper/ng2-adsense/)
+# IMG preload handleing one after another : appChapterImageSwitcher

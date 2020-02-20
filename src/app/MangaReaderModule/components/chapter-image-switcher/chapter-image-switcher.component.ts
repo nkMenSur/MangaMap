@@ -14,6 +14,7 @@ export class ChapterImageSwitcherComponent implements OnInit {
   @Input() mangaId;
   @Input() chapterId;
 
+  chapterImgs: HTMLImageElement[] = [];
   loading = true;
   chapterData: IChapterDto;
   previousId: string;
@@ -54,7 +55,7 @@ export class ChapterImageSwitcherComponent implements OnInit {
       this.mangaId, this.chapterId
     );
 
-    if(this.chapterData.chapter.length) {
+    if (this.chapterData.chapter.length) {
       this.loading = false;
     }
 
@@ -65,6 +66,19 @@ export class ChapterImageSwitcherComponent implements OnInit {
     this.nextId = await this.ss.getNextChapterId(
       this.mangaId, this.chapterData.chapterIndex
     );
+    const imgUrls = this.chapterData.chapter.map(x => this.cdnImgRoot + x[1]);
+    this.pload(imgUrls);
+  }
+
+  // TODO: image preload handleing one after another like in mangastorm
+  pload(imgArray: any[]): void {
+    for (var i = 0; i < imgArray.length; i++) {
+      const img = new Image();
+      this.chapterImgs.push(img);
+      this.chapterImgs[i].src = imgArray[i];
+
+      console.log('loaded: ' + imgArray[i]);
+    }
   }
 
   ngOnDestroy() {

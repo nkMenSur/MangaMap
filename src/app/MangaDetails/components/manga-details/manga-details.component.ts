@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { IMangaDetails } from 'src/app/SharedModule/interfaces/IMangaDetails';
-import { IMAGE } from 'src/app/SharedModule/endpoints/endpoints';
 import { ActivatedRoute } from '@angular/router';
 import { MangaService } from 'src/app/services/manga/manga.service';
+import { IMangaDetails } from 'src/app/interfaces/IMangaDetails';
+import { IMAGE } from 'src/app/endpoints/endpoints';
 
 @Component({
   selector: 'app-manga-details',
